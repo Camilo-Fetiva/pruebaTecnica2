@@ -14,7 +14,7 @@ const port = process.env.PORT;
 
 app.use(express.json());
 app.use('/empleados', empleadosRouter);
-app.use('departamentos', departamentosRouter);
+app.use('/departamentos', departamentosRouter);
 
 // INVOACR LA BASE DE DATOS DE MONGO
 connectionMongo();

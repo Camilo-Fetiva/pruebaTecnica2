@@ -14,7 +14,7 @@ departamentosRouter.post('/crear', postDepartamento);
 departamentosRouter.get('/obtener', getDepartamento);
 
 // PUT
-departamentosRouter.put('/actualizar', putDepartamentoById);
+departamentosRouter.put('/actualizar/:id', putDepartamentoById);
 
 // DELETE
-departamentosRouter.delete('/eliminar', deleteDepartamentoById);
+departamentosRouter.delete('/eliminar/:id', deleteDepartamentoById);

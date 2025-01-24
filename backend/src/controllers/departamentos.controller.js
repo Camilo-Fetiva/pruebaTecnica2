@@ -6,9 +6,9 @@ import { departamentoModel } from "../models/departamentos.model.js";
 // POST
 export const postDepartamento = async (request, response) =>{
     try {
-        const {Codigo, Nombre,CodigoDepartamento} = request.body;
+        const {Nombre, CodigoDepartamento} = request.body;
 
-        const newDepartamento = await departamentoModel.create({Codigo, Nombre,CodigoDepartamento});
+        const newDepartamento = await departamentoModel.create({Nombre, CodigoDepartamento});
 
         return response.status(201).json({
             mensaje: "Departamento creado satisfactoriamente",
@@ -55,7 +55,7 @@ export const putDepartamentoById = async (request, response) => {
         let idForPut = request.params.id; //Parametro ID del producto a actualizar
         let dataForUpdate = request.body; // Informacion actualizada
 
-        const departamentoUpdated = await departamentoModel.findByIdAndUpdate(idForPut, dataForUpdate); // Parametro del ID  y luego parametro de la info actualizada
+        const departamentoUpdated = await departamentoModel.findByIdAndUpdate(idForPut, dataForUpdate);
 
         if(!departamentoUpdated){
             return response.status(404).json ({
