@@ -3,7 +3,7 @@ import { postDepartamento, getDepartamento, putDepartamentoById, deleteDepartame
 import express from 'express';
 
 // CONFIGURAR ROUTER
-export const departamentosRouter = express.Router;
+export const departamentosRouter = express.Router();
 
 // RUTAS PARA LAS PETICIONES
 

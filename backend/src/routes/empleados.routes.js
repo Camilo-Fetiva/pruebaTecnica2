@@ -3,7 +3,7 @@ import { postEmpleado, getEmpleado, putEmpleadoById, deleteEmpleadoById } from "
 import express from 'express';
 
 // CONFIGURAR ROUTER
-export const empleadosRouter = express.Router;
+export const empleadosRouter = express.Router();
 
 // RUTAS PARA LAS PETICIONES
 
