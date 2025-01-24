@@ -14,7 +14,7 @@ empleadosRouter.post('/crear', postEmpleado);
 empleadosRouter.get('/obtener', getEmpleado);
 
 // PUT
-empleadosRouter.put('/actualizar', putEmpleadoById);
+empleadosRouter.put('/actualizar/:id', putEmpleadoById);
 
 // DELETE
-empleadosRouter.delete('/eliminar', deleteEmpleadoById);
+empleadosRouter.delete('/eliminar/:id', deleteEmpleadoById);
