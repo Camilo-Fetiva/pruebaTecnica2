@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
 
+// DEPENDENCIAS NECESARIAS
+import { RouterOutlet } from '@angular/router';
+import { RouterLink } from '@angular/router';
+
 @Component({
   selector: 'app-form-departamentos',
   standalone: true,
-  imports: [],
+  imports: [RouterLink, RouterOutlet],
   templateUrl: './form-departamentos.component.html',
   styleUrl: './form-departamentos.component.css'
 })

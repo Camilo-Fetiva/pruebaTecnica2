@@ -28,6 +28,9 @@ main{
     gap: 8px;
     align-items: center;
     justify-content: center;
+    padding: 4px;
+    border-radius: 8px;
+    color: var(--colorBlanco);
 }
 
 .btn-secondary{
@@ -37,33 +40,20 @@ main{
     gap: 8px;
     align-items: center;
     justify-content: center;
-}
-
-a:link, :visited, :hover, :active{
-    text-decoration: none;
-    color: var(--colorTexto);
-}
-
-
-.admin-texto{
-    text-align: center;
+    padding: 4px;
+    border-radius: 8px;
     color: var(--colorBlanco);
-    gap: 16px;
-    margin-top: 40px;
 }
+
 
 .rutas{
     display: flex;
     flex-direction: column;
     gap: 24px;
     margin-top: 40px;
+    margin-bottom: 40px;
 }
 
-.logo{
-    margin: 100px 0;
-    display: flex;
-    justify-content: center;
-}
 
 .btn-danger{
     border: none;
@@ -72,4 +62,79 @@ a:link, :visited, :hover, :active{
     align-items: center;
     justify-content: center;
     width: 100%;
+    padding: 4px;
+    border-radius: 8px;
+    color: var(--colorBlanco);
+    background-color: red;
+}
+
+/* BARRA LATERAL FIN */
+
+.informacion{
+    flex: 1;
+    padding: 24px;
+}
+
+.titulo{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 24px;
+    margin-bottom: 40px;
+    color: var(--colorPrimario);
+}
+
+.titulo h1{
+    font-weight: bolder;
+    font-size: 48px;
+}
+
+.row{
+    margin-bottom: 16px;
+    text-align: left;
+}
+
+.mb-3{
+    text-align: left;
+}
+
+.btn-login{
+    all: unset;
+    background-color: var(--colorPrimario);
+    padding: 8px 16px;
+    border-radius: 8px;
+    color: var(--colorBlanco);
+    font-weight: bolder;
+    margin: 16px;
+}
+
+main h1{
+    color: var(--colorPrimario);
+    font-weight: bolder;
+    text-align: left;
+}
+
+.formulario{
+    background-color: #e6e9ec;
+    padding: 16px;
+    border-radius: 32px;
+}
+.form-check-label{
+    text-align: left;
+    font-size: 14px;
+}
+
+.btn-delete{
+    all: unset;
+    background-color: red;
+    padding: 8px 16px;
+    border-radius: 8px;
+    color: var(--colorBlanco);
+    font-weight: bolder;
+    margin: 16px ;
+}
+
+a{
+    text-decoration: none;
+    color: var(--colorBlanco);
 }
