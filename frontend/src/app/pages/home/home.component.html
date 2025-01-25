@@ -1,1 +1,103 @@
-<p>home works!</p>
+<main>
+    <!-- Barra izquierda -->
+    <section class="admin-categorias">
+        <!-- CARD DE ADMIN -->
+        <div class="card2">
+            <img src="/assets/dashboard/home/img-admin.png" alt="icono" width="150px">
+            <div class="card-body">
+                <h5 class="card-title"><strong>empresaA</strong></h5>
+                <p class="card-text"><strong>Administrador(a)</strong></p>
+            </div>
+        </div>
+        <!-- ----------------------------------- -->
+
+        <section class="rutas">
+            <!-- BOTON BOOTSTRAP ACTIVE -->
+            <button type="button" class="btn btn-primary">
+                <img src="/assets/dashboard/home/img-icono-home.png" alt="icono">
+                Departamentos</button>
+            <!-- ------------------------ -->
+
+            <!-- BOTON BOOTSTRAP DISABLE -->
+            <button type="button" class="btn btn-secondary">
+                <img src="/assets/dashboard/home/img-icono-users.png" alt="icono">
+                <a routerLink="/Dashboard/Usuarios">Empleados</a></button>
+            <!-- ------------------------ -->
+        </section>
+
+        <!-- BOTON BOOTSTRAP SALIR -->
+        <button type="button" class="btn btn-danger">
+            <img src="/assets/dashboard/home/img-icono-salir.png" alt="icono">
+            <a routerLink="/">Salir</a></button>
+        <!-- ------------------------ -->
+    </section>
+
+    <!-- INFO -->
+    <section class="informacion">
+        <section class="titulo">
+            <img src="/assets/dashboard/home/img-icono-home2.png" alt="icono" height="50px">
+            <h1>Dashboard</h1>
+        </section>
+
+
+        <section class="categorias-admin">
+
+            <div class="card" style="width: 18rem;">
+                <img src="/assets/dashboard/home/img-ordenes.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h2 class="card-title">Departamentos</h2>
+                    <button type="button" class="btn btn-primary">
+                        <img src="/assets/dashboard/home/img-icono-config.png" alt="icono">
+                        <a routerLink="/Dashboard/Ordenes">Formulario</a></button>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="/assets/dashboard/home/img-users.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h2 class="card-title">Empleados</h2>
+                    <button type="button" class="btn btn-primary">
+                        <img src="/assets/dashboard/home/img-icono-config.png" alt="icono">
+                        <a routerLink="/Dashboard/Usuarios">Formulario</a></button>
+                </div>
+            </div>
+        </section>
+
+        <h2>Lista de información </h2>
+        <!-- Tabla de BOOTSTRAP -->
+        <section class="tabla-inventario">
+            <table class="table">
+                <thead class="table-dark">
+                    <th scope="col">Editar</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Correo</th>
+                    <th scope="col">Teléfono</th>
+                    <th scope="col">Rol</th>
+                    <th scope="col">ID</th>
+                </thead>
+
+                <!-- TABLA -->
+                <tbody class="table-group-divider" id="miTabla">
+                    <!-- @for (producto of allProducts; track $index) -->
+
+                    <tr>
+                        <td class="acciones" id="acciones">
+                            <button type="button" class="btn btn-primary">
+                                <img src="/assets/dashboard/home/img-icono-editar.png" alt="icono" width="30px">
+                            </button>
+
+                            <button type="button" class="btn btn-danger">
+                                <img src="/assets/dashboard/home/img-icono-eliminar.png" alt="icono" width="30px">
+                            </button>
+                        </td>
+                        <!-- <td>{{usuario.Nombre}}</td>
+                        <td>{{usuario.Correo}}</td>
+                        <td>${{usuario.Telefono}}</td>
+                        <td>{{usuario.roleUser}}</td>
+                        <td>{{usuario._id}}</td> -->
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </section>
+</main>
