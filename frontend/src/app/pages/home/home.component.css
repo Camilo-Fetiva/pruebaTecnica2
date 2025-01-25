@@ -28,6 +28,9 @@ main{
     gap: 8px;
     align-items: center;
     justify-content: center;
+    padding: 4px;
+    border-radius: 8px;
+    color: var(--colorBlanco);
 }
 
 .btn-secondary{
@@ -37,33 +40,20 @@ main{
     gap: 8px;
     align-items: center;
     justify-content: center;
-}
-
-a:link, :visited, :hover, :active{
-    text-decoration: none;
-    color: var(--colorTexto);
-}
-
-
-.admin-texto{
-    text-align: center;
+    padding: 4px;
+    border-radius: 8px;
     color: var(--colorBlanco);
-    gap: 16px;
-    margin-top: 40px;
 }
+
 
 .rutas{
     display: flex;
     flex-direction: column;
     gap: 24px;
     margin-top: 40px;
+    margin-bottom: 40px;
 }
 
-.logo{
-    margin: 100px 0;
-    display: flex;
-    justify-content: center;
-}
 
 .btn-danger{
     border: none;
@@ -72,7 +62,13 @@ a:link, :visited, :hover, :active{
     align-items: center;
     justify-content: center;
     width: 100%;
+    padding: 4px;
+    border-radius: 8px;
+    color: var(--colorBlanco);
+    background-color: red;
 }
+
+/* BARRA LATERAL FIN */
 
 .informacion{
     flex: 1;
@@ -85,52 +81,47 @@ a:link, :visited, :hover, :active{
     width: 100%;
     gap: 24px;
     margin-bottom: 40px;
-    color: rgb(0, 23, 58);
+    color: var(--colorPrimario);
 }
 
 .titulo h1{
     font-weight: bolder;
+    font-size: 48px;
 }
 
-.productos-vendidos{
+.categorias-admin{
     display: flex;
-    justify-content: space-between;
-    margin: 24px 0;
-    width: auto;
-    gap: 16px;
+    gap: 48px;
+    align-items: center;
 }
 
-.orden-card {
-    background-color: var(--colorBlanco);
-    border: 1px solid #ddd;
+.card{
+    background-color: #e6e9ec;
+    padding: 32px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-size: 24px;
+    color: var(--colorSecundario);
+}
+
+.botonForm{
+    background-color: var(--colorSecundario);
+    font-size: 24px;
+    padding: 8px;
+    margin-top: 16px;
     border-radius: 8px;
-    padding: 16px;
-    width: 100%;
-    text-align: center;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 0 8px;
-}
-
-.orden-card img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-bottom: 12px;
-}
-
-.orden-detalle p {
-    margin: 8px 0;
-    font-size: 14px;
-    color: #333;
-}
-
-.boton-producto{
+    color: var(--colorBlanco);
     display: flex;
-    gap: 16px;
-    margin: 32px 0;
-    align-items: start;
+    gap: 8px;
 }
 
+h2{
+    font-size: 32px;
+    margin: 24px 0;
+    color: var(--colorPrimario);
+}
 .table{
     background-color: var(--colorPrimario);
     table-layout: fixed; /* Hace que todas las celdas tengan el mismo tamaño */

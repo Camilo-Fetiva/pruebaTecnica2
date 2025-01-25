@@ -14,8 +14,13 @@
         <section class="rutas">
             <!-- BOTON BOOTSTRAP ACTIVE -->
             <button type="button" class="btn btn-primary">
-                <img src="\assets\img-icono-home.png" alt="icono">
-                Departamentos</button>
+                <img src="\assets\img-icono-home.png" alt="icono">Dashboard</button>
+            <!-- ------------------------ -->
+
+            <!-- BOTON BOOTSTRAP DISABLE -->
+            <button type="button" class="btn btn-secondary">
+                <img src="\assets\img-icono-inventario.png" alt="icono">
+                <a routerLink="/Dashboard/Usuarios">Departamentos</a></button>
             <!-- ------------------------ -->
 
             <!-- BOTON BOOTSTRAP DISABLE -->
@@ -42,21 +47,21 @@
 
         <section class="categorias-admin">
 
-            <div class="card" style="width: 18rem;">
+            <div class="card">
                 <img src="\assets\img-ordenes.png" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h2 class="card-title">Departamentos</h2>
-                    <button type="button" class="btn btn-primary">
+                    <button type="button" class="botonForm">
                         <img src="\assets\img-icono-config.png" alt="icono">
                         <a routerLink="/Dashboard/Ordenes">Formulario</a></button>
                 </div>
             </div>
 
-            <div class="card" style="width: 18rem;">
+            <div class="card">
                 <img src="\assets\img-users.png" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h2 class="card-title">Empleados</h2>
-                    <button type="button" class="btn btn-primary">
+                    <button type="button" class="botonForm">
                         <img src="\assets\img-icono-config.png" alt="icono">
                         <a routerLink="/Dashboard/Usuarios">Formulario</a></button>
                 </div>
