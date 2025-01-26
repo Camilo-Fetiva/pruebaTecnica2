@@ -86,66 +86,6 @@ export class FormEmpleadosComponent {
     );
   }
 
-  //MODIFICAR EMPLEADOS
-  identificarId(id: string | undefined) {
-    this.editEmpleadoId = id;
-    this.editMode = true;
-    console.log(this.editEmpleadoId);
-  }
-
-
-  // PETICION PUT
-  modificarEmpleado() {
-    console.log('Entré'); //Puede eliminarse
-    console.log(this.editEmpleadoId, this.Codigo, this.Nombre, this.Apellido1, this.Apellido2);
-
-    if (!this.Nombre || !this.Apellido1 || !this.Apellido2 || this.Codigo <= 0) {
-      alert('Ingrese todos los campos');
-    } else if (this.editEmpleadoId) {
-      const empleadoActualizado: Empleados = {
-        Codigo: this.Codigo,
-        Nombre: this.Nombre,
-        Apellido1: this.Apellido1,
-        Apellido2: this.Apellido2,
-      };
-
-      this._empleados.putEmpleados(empleadoActualizado, this.editEmpleadoId).subscribe({
-        next: (res: any) => {
-          if (res) {
-            console.log('res', res);
-            alert('Empleado actualizado satisfactoriamente');
-            this.obtenerEmpleados();
-          } else {
-            console.error('Hubo un error');
-          }
-        },
-        error: (err) => {
-          console.error('Hubo un error', err);
-        }
-      });
-    }
-  }
-
-  // PETICION DELETE
-  borrarEmpleado(idForDelete: any) {
-    console.log('Empleado a borrar:', idForDelete);
-
-    this._empleados.deleteEmpleados(idForDelete).subscribe({
-      next: (res: any) => {
-        if (res) {
-          console.log('res', res);
-          alert('Empleado eliminado satisfactoriamente')
-          this.obtenerEmpleados();
-        } else {
-          console.error('Hubo un error');
-        }
-      },
-      error: (err) => {
-        console.error('Hubo un error', err);
-      }
-    });
-  }
-
   // Usar el metodo -> ngOnInit
   ngOnInit() {
     this.obtenerEmpleados();

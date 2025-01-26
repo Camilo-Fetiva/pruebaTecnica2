@@ -29,18 +29,18 @@ export class FormDepartamentosComponent {
   allDepartamentos: Departamentos[] = [];
 
   // VARIABLES PARA LAS PETICIONES
-  Nombre: string = "";
+  NombreDepartamento: string = "";
   CodigoDepartamento: number = 0;
   editMode: boolean = false;
   editDepartamentoId: string | undefined | null = null;
 
   // PETICION POST
   crearDepartamento() {
-    if (this.Nombre === '' || this.CodigoDepartamento === 0) {
+    if (this.NombreDepartamento === '' || this.CodigoDepartamento === 0) {
       alert('Ingrese todos los campos');
     } else {
       const nuevoDepartamento: Departamentos = {
-        Nombre: this.Nombre,
+        Nombre: this.NombreDepartamento,
         CodigoDepartamento: this.CodigoDepartamento,
       };
 
@@ -92,13 +92,13 @@ export class FormDepartamentosComponent {
   // PETICION PUT
   modificarDepartamento() {
     console.log('Entré'); //Puede eliminarse
-    console.log(this.editDepartamentoId, this.Nombre, this.CodigoDepartamento);
+    console.log(this.editDepartamentoId, this.NombreDepartamento, this.CodigoDepartamento);
 
-    if (!this.Nombre || this.CodigoDepartamento <= 0) {
+    if (!this.NombreDepartamento || this.CodigoDepartamento <= 0) {
       alert('Ingrese todos los campos');
     } else if (this.editDepartamentoId) {
       const departamentoActualizado: Departamentos = {
-        Nombre: this.Nombre,
+        Nombre: this.NombreDepartamento,
         CodigoDepartamento: this.CodigoDepartamento
       };
 

@@ -68,38 +68,130 @@
             </div>
         </section>
 
+        <!-- FORMULARIO DE PETICIONES EMPLEADOS -->
+        <div class="container">
+            @if(showDivEmpleado){
+            <h3>{{ editMode ? 'Modificar Empleado' : 'Crear Empleado'}}</h3>
+            <form class="py-5 col-lg-6">
+                <div class="mb-3">
+                    <label for="inputName" class="form-label">Codigo</label>
+                    <input type="number" class="form-control" name="codigo" [(ngModel)]="Codigo" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="inputImagen" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" name="Nombre" [(ngModel)]="Nombre" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="inputPrecio" class="form-label">Apellido 1</label>
+                    <input type="text" class="form-control" name="Apellido1" [(ngModel)]="Apellido1" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="inputColeccion" class="form-label">Apellido 2</label>
+                    <input type="text" class="form-control" name="Apellido2" [(ngModel)]="Apellido2" />
+                </div>
+
+
+                <button (click)="editMode ? modificarEmpleado() : crearEmpleado()" type="button"
+                    class="btn btn-secondary bg-my-color col-12">
+                    {{ editMode ? 'Modificar Empleado' : 'Crear Empleado'}}
+                </button>
+                <button (click)="toggleDivEmpleados()" type="button" class="btn btn-danger bg-my-color col-12 mt-3">
+                    Cerrar
+                </button>
+            </form>
+            }
+        </div>
+
+        <!-- FORMULARIO DE PETICIONES departamentos -->
+        <div class="container">
+            @if(showDivDepartamentos){
+            <h3>{{ editMode ? 'Modificar Departamento' : 'Crear Departamento'}}</h3>
+            <form class="py-5 col-lg-6">
+                <div class="mb-3">
+                    <label for="inputName" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" name="Nombre" [(ngModel)]="NombreDepartamento" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="inputImagen" class="form-label">Codigo Departamento</label>
+                    <input type="number" class="form-control" name="CodigoDepartamento" [(ngModel)]="CodigoDepartamento" />
+                </div>
+
+                <button (click)="editMode ? modificarDepartamento() : crearDepartamento()" type="button"
+                    class="btn btn-secondary bg-my-color col-12">
+                    {{ editMode ? 'Modificar Departamento' : 'Crear Departamento'}}
+                </button>
+                <button (click)="toggleDivDepartamento()" type="button" class="btn btn-danger bg-my-color col-12 mt-3">
+                    Cerrar
+                </button>
+            </form>
+            }
+        </div>
+
+
         <h2>Lista de información </h2>
         <!-- Tabla de BOOTSTRAP -->
-        <section class="tabla-inventario">
+        <h3>Empleados</h3>
+        <section class="tabla-Empleados">
             <table class="table">
                 <thead class="table-dark">
                     <th scope="col">Editar</th>
+                    <th scope="col">Codigo</th>
                     <th scope="col">Nombre</th>
-                    <th scope="col">Correo</th>
-                    <th scope="col">Teléfono</th>
-                    <th scope="col">Rol</th>
-                    <th scope="col">ID</th>
+                    <th scope="col">Apellido 1</th>
+                    <th scope="col">Apellido 2</th>
                 </thead>
 
                 <!-- TABLA -->
                 <tbody class="table-group-divider" id="miTabla">
-                    <!-- @for (producto of allProducts; track $index) -->
 
-                    <tr>
+                    <tr *ngFor="let Empleados of allEmpleados">
                         <td class="acciones" id="acciones">
-                            <button type="button" class="btn btn-primary">
+                            <button type="button" class="btn btn-primary" (click)="identificarId(Empleados._id)">
                                 <img src="\assets\img-icono-editar.png" alt="icono" width="30px">
                             </button>
 
-                            <button type="button" class="btn btn-danger">
+                            <button type="button" class="btn btn-danger" (click)="borrarEmpleado(Empleados._id)">
                                 <img src="\assets\img-icono-eliminar.png" alt="icono" width="30px">
                             </button>
                         </td>
-                        <!-- <td>{{usuario.Nombre}}</td>
-                        <td>{{usuario.Correo}}</td>
-                        <td>${{usuario.Telefono}}</td>
-                        <td>{{usuario.roleUser}}</td>
-                        <td>{{usuario._id}}</td> -->
+                        <td>{{Empleados.Codigo}}</td>
+                        <td>{{Empleados.Nombre}}</td>
+                        <td>{{Empleados.Apellido1}}</td>
+                        <td>{{Empleados.Apellido2}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <h3>Departamentos</h3>
+        <section class="tabla-Departamentos">
+            <table class="table">
+                <thead class="table-dark">
+                    <th scope="col">Editar</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Codigo Departamento</th>
+                </thead>
+
+                <!-- TABLA -->
+                <tbody class="table-group-divider" id="miTabla">
+
+                    <tr *ngFor="let Departamentos of allDepartamentos">
+                        <td class="acciones" id="acciones">
+                            <button type="button" class="btn btn-primary" (click)="identificarIdDepartamentos(Departamentos._id)">
+                                <img src="\assets\img-icono-editar.png" alt="icono" width="30px">
+                            </button>
+
+                            <button type="button" class="btn btn-danger"
+                                (click)="borrarDepartamento(Departamentos._id)">
+                                <img src="\assets\img-icono-eliminar.png" alt="icono" width="30px">
+                            </button>
+                        </td>
+                        <td>{{Departamentos.Nombre}}</td>
+                        <td>{{Departamentos.CodigoDepartamento}}</td>
                     </tr>
                 </tbody>
             </table>
