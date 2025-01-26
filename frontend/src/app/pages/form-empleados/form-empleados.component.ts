@@ -3,6 +3,7 @@ import { Component, inject } from '@angular/core';
 // DEPENDENCIAS NECESARIAS
 import { RouterOutlet } from '@angular/router';
 import { RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 
 // EMPLEADOS
 import { Empleados } from '../../interfaces/empleados';
@@ -24,6 +25,7 @@ import { FormsModule } from '@angular/forms';
 export class FormEmpleadosComponent {
   // 1. INJECT de las dependencias a usar
   _empleados = inject(EmpleadosService)
+  _router = inject(Router);
 
   // 2. Declaracion de variables
   allEmpleados: Empleados[] = [];
@@ -53,6 +55,7 @@ export class FormEmpleadosComponent {
           if (res) {
             console.log('res', res);
             alert('Empleado creado satisfactoriamente');
+            this._router.navigate(['/']);
             this.obtenerEmpleados();
           } else {
             console.error('Hubo un error');

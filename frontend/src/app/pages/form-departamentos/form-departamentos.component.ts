@@ -3,6 +3,7 @@ import { Component, inject } from '@angular/core';
 // DEPENDENCIAS NECESARIAS
 import { RouterOutlet } from '@angular/router';
 import { RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 
 // DEPARTAMENTOS
 import { Departamentos } from '../../interfaces/departamentos';
@@ -24,6 +25,7 @@ import { FormsModule } from '@angular/forms';
 export class FormDepartamentosComponent {
   // 1. INJECT de las dependencias a usar
   _departamentos = inject(DepartamentosService)
+  _router = inject(Router);
 
   // 2. Declaracion de variables
   allDepartamentos: Departamentos[] = [];
@@ -49,6 +51,7 @@ export class FormDepartamentosComponent {
           if (res) {
             console.log('res', res);
             alert('Departamento creado satisfactoriamente');
+            this._router.navigate(['/']);
             this.obtenerDepartamentos();
           } else {
             console.error('Hubo un error');
