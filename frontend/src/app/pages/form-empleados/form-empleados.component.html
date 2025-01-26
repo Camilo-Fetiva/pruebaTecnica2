@@ -49,37 +49,28 @@
             <div class="row">
                 <div class="col">
                     <label for="formGroupExampleInput" class="form-label">Codigo</label>
-                    <input type="number" class="form-control" id="formGroupExampleInput" required>
+                    <input type="number" class="form-control" id="formGroupExampleInput" required name="codigo" [(ngModel)]="Codigo">
                 </div>
             </div>
 
             <div class="mb-3">
                 <label for="formGroupExampleInput" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" required>
+                <input type="text" class="form-control" id="formGroupExampleInput" required name="nombre" [(ngModel)]="Nombre">
             </div>
 
             <div class="mb-3">
                 <label for="formGroupExampleInput" class="form-label">Apellido 1</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" required>
+                <input type="text" class="form-control" id="formGroupExampleInput" required name="apellido1" [(ngModel)]="Apellido1">
             </div>
 
             <div class="mb-3">
                 <label for="formGroupExampleInput" class="form-label">Apellido 2</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" required>
+                <input type="text" class="form-control" id="formGroupExampleInput" required name="apellido1" [(ngModel)]="Apellido2">
             </div>
 
-            <div class="mb-3">
-                <label for="formGroupExampleInput" class="form-label">Codigo Departamento</label>
-                    <input type="number" class="form-control" id="formGroupExampleInput" required>
-            </div>
-
-            <!-- Boton de ELIMINAR -->
-            <a style="text-decoration: none"><button class="btn-delete" type="submit"
-                    onclick="nombreUser()">Eliminar</button></a>
-
-            <!-- Boton de GUARDAR -->
-            <a style="text-decoration: none"><button class="btn-login" type="submit"
-                    onclick="nombreUser()">Guardar</button></a>
+            <!-- Boton de MODIFICAR -->
+            <button (click)="crearEmpleado()" type="button" class="btn btn-secondary bg-my-color col-12"><h5>Crear Empleado</h5>
+            </button>
         </section>
     </section>
 </main>

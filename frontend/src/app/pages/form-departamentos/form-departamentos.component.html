@@ -50,22 +50,20 @@
             <div class="row">
                 <div class="col">
                     <label for="formGroupExampleInput" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" required>
+                    <input type="text" class="form-control" id="formGroupExampleInput" required
+                    required name="nombre" [(ngModel)]="Nombre">
                 </div>
             </div>
 
             <div class="mb-3">
-                <label for="formGroupExampleInput" class="form-label">Codigo</label>
-                <input type="number" class="form-control" id="formGroupExampleInput" required>
+                <label for="formGroupExampleInput" class="form-label">Codigo Departamento</label>
+                <input type="number" class="form-control" id="formGroupExampleInput" required
+                required name="codigo" [(ngModel)]="CodigoDepartamento">
             </div>
 
-            <!-- Boton de ELIMINAR -->
-            <a style="text-decoration: none"><button class="btn-delete" type="submit"
-                    onclick="nombreUser()">Eliminar</button></a>
-
-            <!-- Boton de GUARDAR -->
-            <a style="text-decoration: none"><button class="btn-login" type="submit"
-                    onclick="nombreUser()">Guardar</button></a>
+            <!-- Boton de MODIFICAR -->
+            <button (click)="crearDepartamento()" type="button" class="btn btn-secondary bg-my-color col-12"><h5>Crear Departamento</h5>
+            </button>
         </section>
     </section>
 

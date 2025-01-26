@@ -5,5 +5,4 @@ export interface Empleados {
     Nombre: string;
     Apellido1: string;
     Apellido2: string;
-    CodigoDepartamento: number;
 }
